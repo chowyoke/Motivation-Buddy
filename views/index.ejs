@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Motivation Buddy Sign Up Form</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">Motivation Buddy Sign Up Form</h1>
+    <form id="signup-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      
+      <label for="phone">Mobile Number:</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="e.g. 91234567"
+        pattern="^[89][0-9]{7}$"
+        required
+        title="Enter an 8-digit number starting with 8 or 9."
+      >
+      <span id="phoneValidationMsg" class="validation-msg"></span>
+     
+      <label for="start-date">Start Date:</label>
+      <input type="date" id="start-date" name="start-date" required>
+
+      <label for="message-time">Time to Receive Message:</label>
+      <input type="time" id="message-time" name="message-time" required>
+  
+      <button type="submit" id="subscribe-btn">Subscribe</button>
+      <span id="formValidationMsg" class="validation-msg"></span>
+    </form>
+    <% if (typeof msg !== 'undefined') { %>
+      <div class="server-msg" style="color:<%= color %>;margin-top:10px;text-align:center;">
+        <%= msg %>
+      </div>
+    <% } %>
+  </div>
+  <div class="description-box">
+    <h2>Why Sign Up?</h2>
+    <h3>Drives Productivity and Efficiency</h3>
+    <p>
+      You can approach tasks with confidence and focus.
+    </p>
+  </div>
+  <script src="/script.js"></script>
+</body>
+</html>

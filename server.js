@@ -38,7 +38,7 @@ app.post('/subscribe', async function(req, res) {
             await prisma.post.create({
                 data: { name, phone, start_date, message_time },
             });
-            res.render('index', { msg : "Subscriptio has been added successful!", color: "green" });
+            res.render('index', { msg : "Subscription has been added successfully!", color: "green" });
           
 
     //               validationMsg.style.color = 'green';
@@ -47,7 +47,6 @@ app.post('/subscribe', async function(req, res) {
     } catch (error) {
         console.log(error);
         res.render('index', { msg : error , color: "#d9534f" });
-        res.render('index');
     }
 });
 

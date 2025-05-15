@@ -30,7 +30,7 @@ app.post('/subscribe', async function(req, res) {
         console.log("Received POST /subscribe");
         console.log(req.body); // Add this line
 
-        const { name, phone, 'start-date': start_date, 'message-time': message_time } = req.body;
+        const { name, phone, start_date, message_time } = req.body;
 
         if (!name || !phone || !start_date || !message_time) {
             res.render('index', { msg : "Please fill out all fields.", color: "#d9534f" });

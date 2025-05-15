@@ -36,7 +36,7 @@ document.getElementById('signup-form').addEventListener('submit', async function
 
   try {
     // Send data to your backend (replace '/subscribe' with your actual endpoint)
-    const response = await postMessage('/subscribe', {
+    const response = await fetch('/subscribe', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

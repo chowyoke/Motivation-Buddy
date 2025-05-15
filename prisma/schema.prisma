@@ -19,5 +19,5 @@ model Post {
   name      String
   phone     String
   start_date    String
-  message_time  String
+  message_times String[] @default([])
 }

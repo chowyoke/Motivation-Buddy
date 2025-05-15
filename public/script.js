@@ -4,8 +4,13 @@ document.getElementById('signup-form').addEventListener('submit', async function
   const name = document.getElementById('name').value.trim();
   const phone = document.getElementById('phone').value.trim();
   const startDate = document.getElementById('start-date').value;
-  const messageTime = document.getElementById('message-time').value;
+  const messageTime1 = document.getElementById('message-time1').value;
+  const messageTime2 = document.getElementById('message-time2').value;
+  const messageTime3 = document.getElementById('message-time3').value;
   const validationMsg = document.getElementById('formValidationMsg');
+
+  // Collect non-empty times into an array
+  const messageTimes = [messageTime1, messageTime2, messageTime3].filter(Boolean);
 
   // Client-side validation
   const phonePattern = /^[89][0-9]{7}$/;
@@ -21,17 +26,17 @@ document.getElementById('signup-form').addEventListener('submit', async function
     validationMsg.textContent = 'Please select a start date.';
     return;
   }
-  if (!messageTime) {
-    validationMsg.textContent = 'Please select a time to receive your message.';
-    return;
-  }
+if (messageTimes.length === 0) {
+  validationMsg.textContent = 'Please select at least one time to receive your message.';
+  return;
+}
 
   // Prepare data to send
   const formData = {
     name: name,
     phone: phone,
     start_date: startDate,
-    message_time: messageTime
+    message_times: messageTimes   // <-- send as array
   };
 
   try {
@@ -41,7 +46,7 @@ document.getElementById('signup-form').addEventListener('submit', async function
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(formData) // <-- sends message_times as array
     });
 
     if (response.ok) {

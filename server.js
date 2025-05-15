@@ -21,7 +21,7 @@ const prisma = new PrismaClient();
 
 // Main landing page
 app.get('/', async function(req, res) {
-    res.render('index');
+    res.render('index', { msg : "", color: "" });
 });
 
 // Create a new post

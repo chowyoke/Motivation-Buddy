@@ -65,7 +65,6 @@ body {
   background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-color: #fff;
 }
 
 .description-box {
@@ -73,8 +72,6 @@ body {
   background-color: #ffe4ec;
   padding: 8px 10px;
   box-sizing: border-box;
-  position: fixed;
-  bottom: 0;
   left: 0;
   text-align: center;
 }

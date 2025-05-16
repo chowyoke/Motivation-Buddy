@@ -18,6 +18,5 @@ model Post {
   id        Int       @id @default(autoincrement())
   name      String
   phone     String
-  start_date    String
   message_times String[] @default([])
 }

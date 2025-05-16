@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Motivation Buddy Sign Up Form</title>
-  <link rel="stylesheet" href="/styles.css">
+      <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <div class="container">
     <h1 id="title">Motivation Buddy Sign Up Form</h1>
+     <p class="signup-encouragement">
+    Stay motivated and positive for yourself and your loved ones. You’re just one step away - sign up now!
+  </p>
+
     <form id="signup-form">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -23,6 +27,25 @@
         title="Enter an 8-digit number starting with 8 or 9."
       >
       <span id="phoneValidationMsg" class="validation-msg"></span>
+
+      <label>Select your interest areas to receive personalised messages:</label>
+<div class="checkbox-group">
+  <div>
+    <input type="checkbox" id="interest-foodie" name="interests" value="Foodie">
+    <label for="interest-foodie">Foodie</label>
+  </div>
+  <div>
+    <input type="checkbox" id="interest-sports" name="interests" value="Sports and Fitness">
+    <label for="interest-sports">Sports and Fitness</label>
+  </div>
+  <div>
+    <input type="checkbox" id="interest-travelling" name="interests" value="Travelling">
+    <label for="interest-travelling">Travelling</label>
+  </div>
+</div>
+<p style="font-size:0.80em; color:#000000; margin-top:8px; margin-bottom:30px;">
+  In this initial release, you can select up to 3 interest areas.
+</p>
 
       <label>Choose up to 3 times to receive your message daily:</label>
       <input type="time" id="message-time1" name="message-time1">
@@ -49,11 +72,11 @@
     </p>
     <h3>Stay Motivated, Stay Ahead</h3>
     <p>
-      Daily Motivation Delivered Straight to You
+      Daily motivation delivered straight to you
     </p>
-    <h3>Boost Your Drive</h3>
+    <h3>Boost your Drive</h3>
     <p>
-      Empower Your Day with Positive Reminders
+      Empower your day with positive reminders
     </p>
   </div>
   <script src="/script.js"></script>

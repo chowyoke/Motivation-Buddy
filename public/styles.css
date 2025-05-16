@@ -67,6 +67,18 @@ body {
   background-attachment: fixed;
 }
 
+.signup-encouragement {
+  font-size: 1.08em;
+  text-align: center;
+  margin-bottom: 32px;
+  margin-top: -10px;
+  font-weight: 500;
+}
+
+.checkbox-group > div {
+  margin-bottom: 10px; /* Adjust this value for more or less space */
+}
+
 .description-box {
   width: 100%;
   background-color: #ffe4ec;
@@ -98,8 +110,18 @@ button[type="submit"]:hover {
 }
 
 .validation-msg {
+  display: none; /* Hide by default */
+}
+
+.validation-msg.active {
   display: block;
   color: #d9534f;
   margin-top: 10px;
   min-height: 18px;
+  font-weight: bold;
+  background: #fff;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }

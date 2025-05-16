@@ -30,13 +30,13 @@ app.post('/subscribe', async function(req, res) {
         console.log("Received POST /subscribe");
         console.log(req.body); // Add this line
 
-        const { name, phone, message_times } = req.body;
+        const { name, phone, interests, message_times } = req.body;
 
         if (!name || !phone || !message_times || message_times.length === 0) {
             res.render('index', { msg : "Please fill out all fields.", color: "#d9534f" });
         } else {
             await prisma.post.create({
-                data: { name, phone, message_times: Array.isArray(message_times) ? JSON.stringify(message_times) : JSON.stringify([message_times])
+                data: { name, phone, interests: Array.isArray(interests) ? interests : [], message_times: Array.isArray(message_times) ? message_times : [message_times]
     },
             });
             res.render('index', { msg : "Subscription has been added successfully!", color: "green" });

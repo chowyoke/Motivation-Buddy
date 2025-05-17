@@ -19,8 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 // Needed for Prisma to connect to database
-const { PrismaClient } = require('@prisma/client')
-const prisma = new PrismaClient();
+const prisma = require('./prisma');
 
 // Main landing page
 app.get('/', async function(req, res) {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <mc">
   <title>Motivation Buddy Sign Up Form</title>
       <link rel="stylesheet" href="/styles.css">
 </head>
@@ -16,18 +16,6 @@
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" placeholder="Enter your name" required>
       
-      <label for="phone">Mobile Number:</label>
-      <input
-        type="tel"
-        id="phone"
-        name="phone"
-        placeholder="e.g. 91234567"
-        pattern="^[89][0-9]{7}$"
-        required
-        title="Enter an 8-digit number starting with 8 or 9."
-      >
-      <span id="phoneValidationMsg" class="validation-msg"></span>
-
       <label>Select your interest areas to receive personalised messages:</label>
 <div class="checkbox-group">
   <div>
@@ -47,7 +35,7 @@
   In this initial release, you can select up to 3 interest areas.
 </p>
 
-      <label>Choose up to 3 times to receive your message daily:</label>
+      <label>Choose up to 3 timings to receive your message daily:</label>
       <input type="time" id="message-time1" name="message-time1">
       <input type="time" id="message-time2" name="message-time2">
       <input type="time" id="message-time3" name="message-time3">
@@ -64,6 +52,20 @@
       </div>
     <% } %>
   </div>
+
+  <% if (typeof signup_code !== 'undefined' && signup_code) { %>
+  <div class="server-msg" style="margin-top:10px;text-align:center;">
+    <strong>Your unique code:</strong>
+    <div style="font-size:1.6em; margin:10px 0; color:#a9446e;"><%= signup_code %></div>
+    <div>
+      <a href="https://t.me/MyMotivationBuddy_Bot" target="_blank" style="color:#2a7ae2;">Click here to open the Telegram bot</a><br>
+      and send the code above to complete your registration.
+    </div>
+  </div>
+<% } %>
+
+<div id="signupCodeBox"></div>
+
   <div class="description-box">
     <h2>Why Sign Up?</h2>
     <h3>Drives Productivity and Efficiency</h3>

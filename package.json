@@ -10,7 +10,8 @@
     "@prisma/client": "^6.7.0",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
-    "express": "^4.19.1"
+    "express": "^4.19.1",
+    "telegraf": "^4.16.3"
   },
   "devDependencies": {
     "prisma": "^6.7.0"

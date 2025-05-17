@@ -17,9 +17,10 @@ datasource db {
 model Post {
   id        Int       @id @default(autoincrement())
   name      String
-  phone     String
   interests     String[]  @default([]) 
   message_times String[] @default([])
+  signup_code String? @unique
+  telegram_username String?
 }
 
 model Message {

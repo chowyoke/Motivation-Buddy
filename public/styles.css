@@ -39,14 +39,6 @@ input[type="text"] {
   width: 250px;
   margin-bottom: 20px;
 }
-input[type="tel"] {
-  padding: 10px;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 250px;
-  margin-bottom: 20px;
-}
 
 input[type="date"],
 input[type="time"] {

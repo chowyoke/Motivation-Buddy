@@ -14,8 +14,28 @@ document.getElementById('signup-form').addEventListener('submit', async function
   validationMsg.classList.remove('active');
   signupCodeBox.innerHTML = '';
 
+  function toAmPmString(date) {
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let ampm = hours < 12 ? 'am' : 'pm';
+  let displayHour = hours % 12 || 12;
+  return `${displayHour.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}${ampm}`;
+}
+
+function toAmPmStringFromInput(timeStr) {
+    if (!timeStr) return null;
+    const [h, m] = timeStr.split(':');
+    const date = new Date();
+    date.setHours(parseInt(h, 10));
+    date.setMinutes(parseInt(m, 10));
+    date.setSeconds(0);
+    return toAmPmString(date);
+  }
   // Collect non-empty times into an array
-  const messageTimes = [messageTime1, messageTime2, messageTime3].filter(Boolean);
+  // Collect non-empty times and convert them to "hh:mmam"/"hh:mmpm"
+const messageTimes = [messageTime1, messageTime2, messageTime3]
+  .filter(Boolean)
+  .map(toAmPmStringFromInput);
 
   // Client-side validation
   
@@ -90,3 +110,5 @@ if (messageTimes.length === 0) {
     signupCodeBox.innerHTML = '';
   }
 });
+
+

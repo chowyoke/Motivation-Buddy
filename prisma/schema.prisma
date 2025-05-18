@@ -21,6 +21,9 @@ model Post {
   message_times String[] @default([])
   signup_code String? @unique
   telegram_username String?
+  telegram_chat_id  BigInt?
+  scheduled_hour    Int?
+  scheduled_minute  Int?
 }
 
 model Message {
